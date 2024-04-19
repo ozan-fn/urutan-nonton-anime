@@ -13,7 +13,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const myanimelist_1 = __importDefault(require("./lib/myanimelist"));
+const myanimelist_1 = __importDefault(require("../lib/myanimelist"));
 const cors_1 = __importDefault(require("cors"));
 const path_1 = __importDefault(require("path"));
 const app = (0, express_1.default)();
@@ -32,7 +32,7 @@ app.post("/api/myanimelist", (req, res) => __awaiter(void 0, void 0, void 0, fun
         res.sendStatus(500);
     }
 }));
-app.use(express_1.default.static(path_1.default.join(__dirname, './dist')));
+app.use(express_1.default.static(path_1.default.join(__dirname, '../dist')));
 app.listen(3001, () => {
     console.log(`server berjalan di http://localhost:3001`);
 });
