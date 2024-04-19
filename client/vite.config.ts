@@ -6,7 +6,7 @@ export default defineConfig({
     plugins: [react()],
     appType: 'mpa',
     build: {
-        outDir: '../api/public'
+        outDir: '../api/dist/public'
     },
     server: {
         proxy: {
