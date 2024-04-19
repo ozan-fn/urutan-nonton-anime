@@ -8,7 +8,7 @@ NC='\033[0m' # No Color
 
 # Menampilkan beberapa info
 echo -e "${GREEN}Menjalankan npm build...${NC}"
-# cd api && npx tsc && cd ..
+cd api && npx tsc && cd ..
 cd client && npm run build -- --emptyOutDir && cd ..
 echo -e "${GREEN}npm build berhasil!${NC}"
 
