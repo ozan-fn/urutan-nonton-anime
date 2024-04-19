@@ -32,7 +32,7 @@ app.post("/api/myanimelist", (req, res) => __awaiter(void 0, void 0, void 0, fun
         res.sendStatus(500);
     }
 }));
-app.use(express_1.default.static(path_1.default.join(__dirname, '../dist')));
+app.use(express_1.default.static(path_1.default.join(__dirname, '../public')));
 app.listen(3001, () => {
     console.log(`server berjalan di http://localhost:3001`);
 });
