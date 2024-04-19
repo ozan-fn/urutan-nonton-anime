@@ -1,5 +1,5 @@
 import express, { NextFunction, Request, Response } from "express";
-import myanimelist from "../lib/myanimelist";
+import myanimelist from "./lib/myanimelist";
 import cors from 'cors'
 import path from 'path'
 
@@ -20,7 +20,7 @@ app.post("/api/myanimelist", async (req, res) => {
     }
 });
 
-app.use(express.static(path.join(__dirname, '../public')))
+app.use(express.static(path.join(__dirname, './public')))
 
 app.listen(3001, () => {
     console.log(`server berjalan di http://localhost:3001`);
