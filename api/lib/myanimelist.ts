@@ -30,10 +30,11 @@ async function getData(url: string) {
     let genre = $('span[itemprop="genre"]').map((i, e) => $(e).text()).toArray()
     let theme = $('span:contains("Theme:")').next().text()
     let link = $('.horiznav_active').attr('href')
+    let status = $('span:contains("Status:")').parent().text().split(':')[1].trim()
     let prequel = data.find((f) => f.type == "Prequel:")?.link
     let sequel = data.find((f) => f.type == "Sequel:")?.link;
 
-    return { title, thumb, link, eps, genre, theme, prequel, sequel };
+    return { title, thumb, link, eps, status, genre, theme, prequel, sequel };
 }
 
 async function getPrequel(url: string) {
