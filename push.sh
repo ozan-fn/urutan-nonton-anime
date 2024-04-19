@@ -8,7 +8,8 @@ NC='\033[0m' # No Color
 
 # Menampilkan beberapa info
 echo -e "${GREEN}Menjalankan npm build...${NC}"
-cd client && npm run build -- --emptyOutDir
+cd client && npm run build -- --emptyOutDir && cd ..
+cd api && npx tsc && cd ..
 echo -e "${GREEN}npm build berhasil!${NC}"
 
 echo -e "${BLUE}Menambahkan perubahan ke git...${NC}"
