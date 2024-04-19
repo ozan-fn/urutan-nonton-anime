@@ -65,9 +65,10 @@ function getData(url) {
         let theme = $('span:contains("Theme:")').next().text();
         let link = $('.horiznav_active').attr('href');
         let status = $('span:contains("Status:")').parent().text().split(':')[1].trim();
+        let tahun = $('span:contains("Premiered:")').next().text();
         let prequel = (_a = data.find((f) => f.type == "Prequel:")) === null || _a === void 0 ? void 0 : _a.link;
         let sequel = (_b = data.find((f) => f.type == "Sequel:")) === null || _b === void 0 ? void 0 : _b.link;
-        return { title, thumb, link, eps, status, genre, theme, prequel, sequel };
+        return { title, thumb, link, eps, status, genre, theme, prequel, sequel, tahun };
     });
 }
 function getPrequel(url) {

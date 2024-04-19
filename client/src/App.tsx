@@ -4,7 +4,7 @@ import { useState } from "react";
 export default function App() {
     const [loading, setLoading] = useState(false);
     const [input, setInput] = useState("");
-    const [result, setResult] = useState<{ title: string; thumb: string; link: string; eps: string; genre: string[]; theme: string; sequel: string; status: string }[]>([]);
+    const [result, setResult] = useState<{ title: string; thumb: string; link: string; eps: string; genre: string[]; theme: string; sequel: string; status: string; tahun: string }[]>([]);
     const [requestTime, setRequestTime] = useState(0);
 
     async function getData(url: string) {
@@ -59,9 +59,10 @@ export default function App() {
 
             <div className="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7">
                 {result.map((v, i) => (
-                    <div key={i} className="relative flex flex-col">
-                        <a href={v.link}>
-                            <img src={v.thumb} alt="" className="rounded-md object-cover" style={{ aspectRatio: "3.5/5" }} />
+                    <div key={i} className="relative flex h-full w-full flex-col">
+                        <a href={v.link} className="relative flex flex-1 overflow-hidden rounded-md" style={{ aspectRatio: "3.5/5" }}>
+                            <img src={v.thumb} alt="" className="flex-1 object-cover hover:scale-[1.05]" />
+                            <p className="absolute bottom-2 left-2 rounded-md bg-zinc-900/70 px-2 text-zinc-100">{v.tahun}</p>
                         </a>
 
                         <div className="mt-2 flex flex-col">
@@ -72,7 +73,7 @@ export default function App() {
                             <p className="line-clamp-2 h-10 flex-1 text-sm italic text-zinc-400">{v.genre.join(", ")}</p>
                         </div>
 
-                        <p className="absolute right-2 top-2 rounded-md bg-zinc-900/50 px-2 text-zinc-100">{v.status}</p>
+                        <p className="absolute right-2 top-2 rounded-md bg-zinc-900/70 px-2 text-zinc-100">{v.status}</p>
                     </div>
                 ))}
             </div>
